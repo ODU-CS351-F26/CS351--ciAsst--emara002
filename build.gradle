@@ -1,5 +1,6 @@
 plugins {
    id 'java'
+   id 'pmd'
    id 'application'
    id 'org.ajoberstar.git-publish' version '4.2.0'
 }
@@ -44,7 +45,7 @@ tasks.register('copyDocs', Copy) {
 }
 
 tasks.register('reports') {
-    dependsOn copyHtml, copyDocs
+    dependsOn copyHtml, copyDocs, pmdMain
 }
 gitPublish {
     repoUri = 'git@github.com:ODU-CS351-F26/CS351--ciAsst--emara002.git'
@@ -60,4 +61,12 @@ tasks.named('gitPublishCopy') {
 
 tasks.register('deployReports') {
     dependsOn gitPublishPush
+}
+
+pmd {
+    ignoreFailures = true
+}
+
+tasks.named('pmdTest') {
+    enabled = false
 }

@@ -1,6 +1,7 @@
 # Project Reports
 
-Your Name
+EJ Maranan
 
-* [Tests](./reports/tests/test/)
-* [JavaDoc](./reports/javadoc/)
+* [Tests](./tests/test/)
+* [JavaDoc](./javadoc/)
+* [PMD](./pmd/main.html)
